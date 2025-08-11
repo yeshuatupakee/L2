@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - Jetlouge Travels Admin</title>
+  <link rel="icon" type="image/x-icon" href="{{ asset('img/jetlouge_logo.png') }}">
+  <title>Jetlouge Travels - Logistics Login </title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,33 +29,8 @@
                  <img src="{{ asset('img/jetlouge_logo.png') }}" alt="Jetlouge Travels">
                 </div>
                 <h1 class="brand-text">Jetlouge Travels</h1>
-                <p class="brand-subtitle">Admin Portal</p>
+                <p class="brand-subtitle">Logistics Portal</p>
               </div>
-              
-              <h2 class="welcome-text">Welcome Back!</h2>
-              <p class="welcome-subtitle">
-                Access your travel management dashboard to monitor bookings, 
-                manage customers, and grow your travel business.
-              </p>
-              
-              <ul class="feature-list">
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span>Manage bookings & reservations</span>
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span>Track customer interactions</span>
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span>Monitor business analytics</span>
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span>Secure admin access</span>
-                </li>
-              </ul>
             </div>
             
             <!-- Right Side - Login Form -->
@@ -101,16 +77,6 @@
                 
                 <div class="text-center">
                   <a href="#" class="btn-forgot">Forgot your password?</a>
-                </div>
-
-                <hr class="my-4">
-
-                <div class="text-center">
-                  <p class="mb-2">Don't have an account?</p>
-                  <a href="/register" class="btn btn-outline-primary">
-                    <i class="bi bi-person-plus me-2"></i>
-                    Create New Account
-                  </a>
                 </div>
               </form>
             </div>

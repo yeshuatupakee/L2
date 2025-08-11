@@ -2,30 +2,35 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('portfolio');
+// Main Pages
+Route::view('/', 'login')->name('login');
+Route::view('/index', 'index')->name('index');
+
+// Fleet and Vehicle Management (FVM)
+Route::prefix('fvm')->name('fvm.')->group(function () {
+    Route::view('/vehicles', 'fvm.vehicles')->name('vehicles');
+    Route::view('/maintenance', 'fvm.maintenance')->name('maintenance');
+    Route::view('/assignment-tracking', 'fvm.assignment-tracking')->name('assignment-tracking');
+    Route::view('/request-new-vehicle', 'fvm.request-new-vehicle')->name('request-new-vehicle');
 });
 
-
-Route::get('/agent-portal', function () {
-    return view('agent-portal');
+// Vehicle Reservation and Dispatch System (VRDS)
+Route::prefix('vrds')->name('vrds.')->group(function () {
+    Route::view('/reservation', 'vrds.reservation')->name('reservation');
+    Route::view('/trip-scheduling', 'vrds.trip-scheduling')->name('trip-scheduling');
+    Route::view('/dispatch-monitoring', 'vrds.dispatch-monitoring')->name('dispatch-monitoring');
 });
 
-Route::get('/customer-portal', function () {
-    return view('customer-portal');
+// Driver and Trip Performance Monitoring (DTPM)
+Route::prefix('dtpm')->name('dtpm.')->group(function () {
+    Route::view('/driver-profiles', 'dtpm.driver-profiles')->name('driver-profiles');
+    Route::view('/trip-reports', 'dtpm.trip-reports')->name('trip-reports');
+    Route::view('/performance', 'dtpm.performance')->name('performance');
 });
 
-Route::get('/index', function () {
-    return view('index');
+// Transport Cost Analysis and Optimization (TCAO)
+Route::prefix('tcao')->name('tcao.')->group(function () {
+    Route::view('/fuel-and-trip-cost', 'tcao.fuel-and-trip-cost')->name('fuel-and-trip-cost');
+    Route::view('/utilization', 'tcao.utilization')->name('utilization');
+    Route::view('/optimization', 'tcao.optimization')->name('optimization');
 });
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-
-
