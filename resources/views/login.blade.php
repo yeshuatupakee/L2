@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="{{ asset('img/jetlouge_logo.png') }}">
-  <title>Jetlouge Travels - Logistics Login </title>
+  <title>Jetlouge Travels - Logistics 2 Login </title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -116,7 +116,7 @@
         // Simulate login process
         setTimeout(() => {
           // Redirect to dashboard
-          window.location.href = '/index';
+          window.location.href = "{{ route('dashboard') }}";
         }, 2000);
       });
       
