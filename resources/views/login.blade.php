@@ -116,7 +116,7 @@
         // Simulate login process
         setTimeout(() => {
           // Redirect to dashboard
-          window.location.href = '/index';
+          window.location.href = '/dashboard';
         }, 2000);
       });
       

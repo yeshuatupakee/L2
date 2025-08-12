@@ -14,6 +14,8 @@
 </head>
 <body style="background-color: #f8f9fa !important;">
 
+
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--jetlouge-primary);">
     <div class="container-fluid">
@@ -45,8 +47,8 @@
     <ul class="nav flex-column">
         <!-- Dashboard -->
         <li class="nav-item">
-            <a href="{{ route('index') }}"
-              class="nav-link text-dark {{ request()->routeIs('index') ? 'active' : '' }}">
+            <a href="{{ route('dashboard') }}"
+              class="nav-link text-dark {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <i class="bi bi-speedometer2 me-2"></i> Dashboard
             </a>
         </li>
@@ -131,19 +133,7 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Page Header -->
-    <div class="page-header-container mb-4">
-      <div class="d-flex justify-content-between align-items-center page-header">
-        <div class="d-flex align-items-center">
-          <div class="dashboard-logo me-3">
-            <img src="{{ asset('img/jetlouge_logo.png') }}" alt="Jetlouge Travels" class="logo-img">
-          </div>
-          <div>
-            <h2 class="fw-bold mb-1">Logistics Dashboard</h2>
-            <p class="text-muted mb-0">Welcome back, John!</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      @yield('content')
   </main>
 
   <!-- Bootstrap JS -->

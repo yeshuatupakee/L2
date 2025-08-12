@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Main Pages
 Route::view('/', 'login')->name('login');
-Route::view('/index', 'index')->name('index');
+Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 // Fleet and Vehicle Management (FVM)
 Route::prefix('fvm')->name('fvm.')->group(function () {
