@@ -35,10 +35,10 @@
   <aside id="sidebar" class="bg-white border-end p-3 shadow-sm">
     <!-- Profile Section -->
     <div class="profile-section text-center">
-      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      <img src=""
            alt="Admin Profile" class="profile-img mb-2">
-      <h6 class="fw-semibold mb-1">John Anderson</h6>
-      <small class="text-muted">Travel Administrator</small>
+      <h6 class="fw-semibold mb-1">John Doe</h6>
+      <small class="text-muted">Logistics 2 Admin</small>
     </div>
 
     <!-- Navigation Menu -->
