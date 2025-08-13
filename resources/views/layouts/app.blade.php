@@ -33,13 +33,14 @@
 
   <!-- Sidebar -->
   <aside id="sidebar" class="bg-white border-end p-3 shadow-sm">
-    <!-- Profile Section -->
-    <div class="profile-section text-center">
-      <img src=""
-           alt="Admin Profile" class="profile-img mb-2">
-      <h6 class="fw-semibold mb-1">John Doe</h6>
-      <small class="text-muted">Logistics 2 Admin</small>
-    </div>
+<!-- Profile Section -->
+<div class="profile-section text-center">
+  <img src="https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff&size=128" 
+       alt="Admin Profile" class="profile-img mb-2 rounded-circle">
+  <h6 class="fw-semibold mb-1">John Doe</h6>
+  <small class="text-muted">Logistics 2 Admin</small>
+</div>
+
 
     <!-- Navigation Menu -->
     <ul class="nav flex-column">
