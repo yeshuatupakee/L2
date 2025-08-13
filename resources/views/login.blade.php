@@ -109,8 +109,8 @@
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
-        // Show loading state
-        submitBtn.innerHTML = '<i class="bi bi-arrow-clockwise me-2"></i>Signing In...';
+        // Show loading state (spinner only)
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>';
         submitBtn.disabled = true;
         
         // Simulate login process

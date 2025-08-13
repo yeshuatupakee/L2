@@ -101,7 +101,7 @@ body {
 
   main button, main .btn, main a, main input, main select, main textarea {
     position: relative;
-    z-index: 10;
+    z-index: auto;
     pointer-events: auto;
   }
 

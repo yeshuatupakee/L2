@@ -4,13 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="{{ asset('img/jetlouge_logo.png') }}">
-  <title>Jetlouge Travels - Dashboard</title>
+  <title>Jetlouge Travels - @yield('title', 'Dashboard')</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/dash-style-fixed.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/vehicles.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/assignment-tracking.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
 <body style="background-color: #f8f9fa !important;">
 
@@ -39,7 +44,7 @@
     <div class="profile-section text-center">
       <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
            alt="Admin Profile" class="profile-img mb-2">
-      <h6 class="fw-semibold mb-1">John Anderson</h6>
+      <h6 class="fw-semibold mb-1">Franklin Carranza</h6>
       <small class="text-muted">Travel Administrator</small>
     </div>
 
@@ -63,8 +68,8 @@
             <div class="collapse {{ request()->is('fvm/*') ? 'show' : '' }}" id="fleetSub">
                 <ul class="nav flex-column ms-4">
                     <li><a class="nav-link {{ request()->routeIs('fvm.vehicles') ? 'active' : '' }}" href="{{ route('fvm.vehicles') }}">Vehicles</a></li>
-                    <li><a class="nav-link {{ request()->routeIs('fvm.maintenance') ? 'active' : '' }}" href="{{ route('fvm.maintenance') }}">Maintenance</a></li>
                     <li><a class="nav-link {{ request()->routeIs('fvm.assignment-tracking') ? 'active' : '' }}" href="{{ route('fvm.assignment-tracking') }}">Assignment Tracking</a></li>
+                    <li><a class="nav-link {{ request()->routeIs('fvm.maintenance') ? 'active' : '' }}" href="{{ route('fvm.maintenance') }}">Maintenance</a></li>
                     <li><a class="nav-link {{ request()->routeIs('fvm.request-new-vehicle') ? 'active' : '' }}" href="{{ route('fvm.request-new-vehicle') }}">Request New Vehicle</a></li>
                 </ul>
             </div>
@@ -196,20 +201,26 @@
         });
       }
 
-      // Add loading animation to quick action buttons
+      // Simplified loading feedback: spinner only, no text expansion
       document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          if (!this.classList.contains('loading')) {
-            this.classList.add('loading');
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="bi bi-arrow-clockwise me-2"></i>Loading...';
-
-            setTimeout(() => {
-              this.innerHTML = originalText;
+        btn.addEventListener('click', function() {
+          if (this.classList.contains('loading')) return;
+          this.classList.add('loading');
+          // lock width to avoid layout shift
+          const w = this.offsetWidth;
+          this.style.width = w + 'px';
+          const originalHTML = this.innerHTML;
+          this.setAttribute('data-orig', originalHTML);
+          this.innerHTML = '<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>';
+          // do not prevent navigation; auto-restore after short delay for non-nav buttons
+          setTimeout(() => {
+            if (this.isConnected && this.classList.contains('loading')) {
+              this.innerHTML = this.getAttribute('data-orig');
+              this.style.width = '';
               this.classList.remove('loading');
-            }, 1500);
-          }
-        });
+            }
+          }, 1500);
+        }, { passive: true });
       });
 
       // Handle window resize for responsive behavior
@@ -222,22 +233,7 @@
         }
       });
 
-      // --- Persist only real route links (ignore hash toggles) ---
-      document.querySelectorAll('.nav-link').forEach(link => {
-        const href = link.getAttribute('href') || '';
-        // persist only real route links (ignore hash toggles)
-        if (!href.startsWith('#') && href.trim() !== '') {
-          link.addEventListener('click', function () {
-            // mark active link visually
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
 
-            localStorage.setItem('activeLink', href);
-            // clicking a real route should clear the open submenu state
-            localStorage.removeItem('openSubmenu');
-          });
-        }
-      });
 
       // --- Save submenu open/close, but only for collapse toggles ---
       document.querySelectorAll('.collapse-toggle').forEach(toggle => {
@@ -250,30 +246,36 @@
         });
       });
 
-      // --- Restore submenu state (defensive) ---
-      const openSubmenu = localStorage.getItem('openSubmenu');
-      if (openSubmenu) {
-        const submenu = document.querySelector(openSubmenu);
-        if (submenu) submenu.classList.add('show');
-      }
-
-      // --- Restore active link (only for real links) ---
-      const activeLink = localStorage.getItem('activeLink');
-      if (activeLink) {
-        const link = document.querySelector(`.nav-link[href="${activeLink}"]`);
-        if (link) {
-          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-          // open its parent submenu if needed
-          const parentCollapse = link.closest('.collapse');
-          if (parentCollapse && !parentCollapse.classList.contains('show')) {
-            parentCollapse.classList.add('show');
+      // --- Restore submenu state, but never on Dashboard ---
+      const currentPathForSubmenu = window.location.pathname;
+      if (currentPathForSubmenu === '/dashboard') {
+        localStorage.removeItem('openSubmenu');
+        document.querySelectorAll('.collapse.show').forEach(c => c.classList.remove('show'));
+        document.querySelectorAll('.collapse-toggle').forEach(t => t.classList.add('collapsed'));
+      } else {
+        const openSubmenu = localStorage.getItem('openSubmenu');
+        if (openSubmenu) {
+          const submenu = document.querySelector(openSubmenu);
+          if (submenu) {
+            submenu.classList.add('show');
+            const toggle = document.querySelector(`[href="${openSubmenu}"]`);
+            if (toggle) toggle.classList.remove('collapsed');
           }
         }
       }
 
+      // --- Pure server-driven active: remove any saved override ---
+      localStorage.removeItem('activeLink');
+      // ensure the correct submenu opens based on server-side markup
+      document.querySelectorAll('.collapse').forEach(c => {
+        const toggle = document.querySelector(`[href="#${c.id}"]`);
+        if (toggle) toggle.classList.toggle('collapsed', !c.classList.contains('show'));
+      });
+
     }); // Close DOMContentLoaded
   </script>
+
+  @yield('scripts')
 
 </body>
 </html>

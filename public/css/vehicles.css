@@ -1,0 +1,463 @@
+/* Ensure Bootstrap modals render above custom navbar/sidebar and remain clickable */
+.modal { z-index: 2000; }
+.modal-backdrop { z-index: 1990; }
+.modal, .modal-dialog, .modal-content { pointer-events: auto; }
+
+/* Vehicle Management Styles */
+
+.page-header-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.page-header {
+    color: white;
+}
+
+.page-header h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.page-header .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dashboard-logo .logo-img {
+    height: 50px;
+    width: auto;
+    border-radius: 8px;
+}
+
+/* Vehicle Avatar Styling */
+.vehicle-avatar {
+    width: 50px;
+    height: 50px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e9ecef;
+}
+
+/* Status Badges */
+.badge.bg-success {
+    background-color: #28a745 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge.bg-light {
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+    border: 1px solid #dee2e6;
+}
+
+/* Table Styling */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.table th {
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+/* Button Styling */
+.btn-group .btn {
+    border-radius: 6px;
+    margin-right: 2px;
+}
+
+.btn-group .btn:last-child {
+    margin-right: 0;
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 15px 15px 0 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Form Styling */
+.form-control:focus,
+.form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+/* Search and Filter Section */
+.input-group-text {
+    background-color: #f8f9fa;
+    border-color: #ced4da;
+    color: #6c757d;
+}
+
+/* Pagination */
+.pagination .page-link {
+    color: #667eea;
+    border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+.pagination .page-link:hover {
+    color: #5a6fd8;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Vehicle Details View */
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .page-header .btn {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .table-responsive {
+        font-size: 14px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        margin-bottom: 2px;
+        margin-right: 0;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Animation for table rows */
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+/* Custom scrollbar for modals */
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Vehicle type icons */
+.vehicle-avatar i.fa-car {
+    color: #007bff;
+}
+
+.vehicle-avatar i.fa-truck {
+    color: #17a2b8;
+}
+
+.vehicle-avatar i.fa-car-side {
+    color: #28a745;
+}
+
+.vehicle-avatar i.fa-bus {
+    color: #ffc107;
+}
+
+/* Success/Error Messages */
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+/* Photo Gallery Styles */
+.photo-preview-item,
+.photo-item {
+    position: relative;
+    display: inline-block;
+}
+
+.photo-preview-item img,
+.photo-item img {
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.photo-preview-item:hover img,
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+.photo-preview-item .btn,
+.photo-item .btn {
+    transform: translate(50%, -50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Styles */
+.carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.carousel-indicators {
+    margin-bottom: -10px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+/* Photo Thumbnails */
+.photo-thumbnail {
+    transition: all 0.2s ease;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+}
+
+.photo-thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.photo-thumbnail.border-primary {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+}
+
+/* File Input Styling */
+.form-control[type="file"] {
+    padding: 8px 12px;
+}
+
+.form-control[type="file"]:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Loading States */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Toast Notifications */
+.toast-notification {
+    animation: slideInRight 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 8px;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Modal Enhancements */
+.modal-lg {
+    max-width: 900px;
+}
+
+.modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Photo Grid Layout */
+#photoPreview,
+#editPhotoPreview,
+#currentPhotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Improved Button Groups */
+.btn-group .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Status Badge Improvements */
+.badge {
+    font-size: 0.75em;
+    padding: 0.35em 0.65em;
+    border-radius: 0.375rem;
+}
+
+/* Table Row Hover Effects */
+.table-hover tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+/* Vehicle Avatar Enhancements */
+.vehicle-avatar {
+    transition: all 0.2s ease;
+}
+
+.vehicle-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Validation Styles */
+.form-control:invalid {
+    border-color: #dc3545;
+}
+
+.form-control:valid {
+    border-color: #28a745;
+}
+
+/* Responsive Photo Gallery */
+@media (max-width: 768px) {
+    .photo-thumbnail {
+        width: 60px !important;
+        height: 45px !important;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 8%;
+    }
+
+    .modal-lg {
+        max-width: 95%;
+        margin: 10px auto;
+    }
+
+    .photo-preview-item img,
+    .photo-item img {
+        width: 80px !important;
+        height: 60px !important;
+    }
+}

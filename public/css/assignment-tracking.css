@@ -1,0 +1,324 @@
+/* Assignment Tracking Styles - Aligned with Jetlouge Design System */
+
+/* Stats Cards */
+.stats-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-left: 4px solid var(--jetlouge-accent);
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stats-card .card-body {
+    padding: 1.5rem;
+}
+
+.stats-card h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.stats-card h6 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.stats-card.bg-primary {
+    background-color: var(--jetlouge-primary) !important;
+    border-left-color: var(--jetlouge-secondary);
+}
+
+.stats-card.bg-success {
+    background-color: var(--jetlouge-secondary) !important;
+    border-left-color: #10b981;
+}
+
+.stats-card.bg-warning {
+    background-color: var(--jetlouge-accent) !important;
+    color: #1f2937 !important;
+    border-left-color: #f59e0b;
+}
+
+.stats-card.bg-info {
+    background-color: var(--jetlouge-light) !important;
+    color: var(--jetlouge-primary) !important;
+    border-left-color: var(--jetlouge-primary);
+}
+
+/* Main Cards */
+.main-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    overflow: hidden;
+}
+
+.main-card .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 1.5rem;
+}
+
+.main-card .card-title {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0;
+}
+
+/* Buttons */
+.btn-clean {
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-clean:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary-clean {
+    background-color: var(--jetlouge-primary);
+    color: white;
+}
+
+.btn-primary-clean:hover {
+    background-color: var(--jetlouge-secondary);
+    color: white;
+}
+
+.btn-outline-clean {
+    background: white;
+    border: 1px solid #dee2e6;
+    color: #6c757d;
+}
+
+.btn-outline-clean:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+/* Table Styling */
+.table-clean {
+    border: none;
+}
+
+.table-clean thead th {
+    border: none;
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table-clean tbody td {
+    border: none;
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.table-clean tbody tr:hover {
+    background-color: rgba(30, 58, 138, 0.05);
+}
+
+/* Status Badges - Using standard Bootstrap badges */
+.badge.bg-success {
+    background-color: #28a745 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge.bg-light {
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+    border: 1px solid #dee2e6;
+}
+
+/* Trip Info Styling - Clean text alignment */
+.trip-info h6 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Content Styling */
+.location-text {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.location-full {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 280px;
+}
+
+.location-full strong {
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.time-details {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    min-width: 160px;
+}
+
+.time-details strong {
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.time-details .text-success {
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.customer-info, .driver-info {
+    line-height: 1.5;
+}
+
+.customer-info h6, .driver-info h6 {
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.customer-info small, .driver-info small {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.vehicle-info {
+    line-height: 1.5;
+}
+
+.vehicle-info h6 {
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+/* License plate styling handled by standard Bootstrap badge */
+
+.time-info {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.action-buttons .btn {
+    margin: 0 0.1rem;
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+}
+
+/* Map Styling */
+#map {
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Form Controls */
+.form-select-clean {
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.form-select-clean:focus {
+    border-color: var(--jetlouge-primary);
+    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.25);
+}
+
+/* Animations */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Map Markers */
+.custom-marker {
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Removed modal styling - no longer needed */
+
+/* Card Details */
+.card-detail {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+.card-detail i {
+    width: 12px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-card h3 {
+        font-size: 1.8rem;
+    }
+    
+    .location-text {
+        max-width: 120px;
+    }
+    
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    
+    .action-buttons .btn {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+}
