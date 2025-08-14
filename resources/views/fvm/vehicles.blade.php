@@ -79,7 +79,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-car text-primary fs-4"></i>
+                                        <img src="{{ asset('img/Silver Sedan.png') }}" alt="Sedan" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Toyota Camry 2022</h6>
@@ -111,7 +111,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-truck text-info fs-4"></i>
+                                        <img src="{{ asset('img/mini van.png') }}" alt="Van" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Ford Transit 2023</h6>
@@ -143,7 +143,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-car-side text-success fs-4"></i>
+                                        <img src="{{ asset('img/luxary car.png') }}" alt="Luxury" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Mercedes S-Class 2024</h6>
@@ -176,7 +176,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-car text-secondary fs-4"></i>
+                                        <img src="{{ asset('img/Silver Sedan.png') }}" alt="Sedan" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Honda Accord 2021</h6>
@@ -208,7 +208,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-car-side text-dark fs-4"></i>
+                                        <img src="{{ asset('img/suv.png') }}" alt="SUV" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Chevrolet Suburban 2020</h6>
@@ -240,7 +240,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-van-shuttle text-primary fs-4"></i>
+                                        <img src="{{ asset('img/mini van.png') }}" alt="Van" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Mercedes Sprinter 2022</h6>
@@ -272,7 +272,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-bus text-warning fs-4"></i>
+                                        <img src="{{ asset('img/priv bus.png') }}" alt="Bus" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Toyota Coaster 2019</h6>
@@ -304,7 +304,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-car text-danger fs-4"></i>
+                                        <img src="{{ asset('img/luxary car.png') }}" alt="Luxury" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Tesla Model S 2023</h6>
@@ -336,7 +336,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-van-shuttle text-info fs-4"></i>
+                                        <img src="{{ asset('img/mini van.png') }}" alt="Van" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Nissan NV350 2018</h6>
@@ -368,7 +368,7 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="vehicle-avatar me-3">
-                                        <i class="fas fa-car-side text-success fs-4"></i>
+                                        <img src="{{ asset('img/suv.png') }}" alt="SUV" class="img-fluid" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
                                     </div>
                                     <div>
                                         <h6 class="mb-0">BMW 7 Series 2024</h6>
@@ -421,95 +421,128 @@
 
     <!-- Add Vehicle Modal -->
     <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addVehicleModalLabel">Add New Vehicle</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content shadow-lg border-0">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="addVehicleModalLabel"><i class="fas fa-plus-circle me-2"></i>Add New Vehicle</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="addVehicleForm">
-                    <div class="modal-body">
-                        <div class="row g-2">
-                            <div class="col-md-6">
-                                <label for="vehicleMake" class="form-label">Make</label>
-                                <input type="text" class="form-control" id="vehicleMake" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleModel" class="form-label">Model</label>
-                                <input type="text" class="form-control" id="vehicleModel" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleYear" class="form-label">Year</label>
-                                <input type="number" class="form-control" id="vehicleYear" min="1900" max="2030" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleLicense" class="form-label">License Plate</label>
-                                <input type="text" class="form-control" id="vehicleLicense" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleVin" class="form-label">VIN Number</label>
-                                <input type="text" class="form-control" id="vehicleVin" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleType" class="form-label">Vehicle Type</label>
-                                <select class="form-select" id="vehicleType" required>
-                                    <option value="">Select Type</option>
-                                    <option value="sedan">Sedan</option>
-                                    <option value="suv">SUV</option>
-                                    <option value="van">Van</option>
-                                    <option value="bus">Bus</option>
-                                    <option value="luxury">Luxury</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleCapacity" class="form-label">Passenger Capacity</label>
-                                <input type="number" class="form-control" id="vehicleCapacity" min="1" max="50" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleColor" class="form-label">Color</label>
-                                <input type="text" class="form-control" id="vehicleColor" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleFuelType" class="form-label">Fuel Type</label>
-                                <select class="form-select" id="vehicleFuelType" required>
-                                    <option value="">Select Fuel Type</option>
-                                    <option value="gasoline">Gasoline</option>
-                                    <option value="diesel">Diesel</option>
-                                    <option value="hybrid">Hybrid</option>
-                                    <option value="electric">Electric</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleStatus" class="form-label">Status</label>
-                                <select class="form-select" id="vehicleStatus" required>
-                                    <option value="active">Active</option>
-                                    <option value="maintenance">Maintenance</option>
-                                    <option value="inactive">Inactive</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleMileage" class="form-label">Current Mileage</label>
-                                <input type="number" class="form-control" id="vehicleMileage" min="0">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vehicleInsurance" class="form-label">Insurance Expiry</label>
-                                <input type="date" class="form-control" id="vehicleInsurance">
-                            </div>
-                            <div class="col-12">
-                                <label for="vehiclePhotos" class="form-label">Vehicle Photos</label>
-                                <input type="file" class="form-control" id="vehiclePhotos" multiple accept="image/*">
-                                <small class="text-muted">You can select multiple photos (JPG, PNG, GIF)</small>
-                                <div id="photoPreview" class="mt-3 d-flex flex-wrap gap-2"></div>
-                            </div>
-                            <div class="col-12">
-                                <label for="vehicleNotes" class="form-label">Notes</label>
-                                <textarea class="form-control" id="vehicleNotes" rows="3"></textarea>
+                <form id="addVehicleForm" class="needs-validation" novalidate>
+                    <div class="modal-body p-3">
+                        <div class="section-header mb-3">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-car me-2"></i>Vehicle Information</h6>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="vehicleMake" class="form-label fw-semibold">Make *</label>
+                                    <input type="text" class="form-control" id="vehicleMake" placeholder="e.g., Toyota" required>
+                                    <div class="invalid-feedback">Please provide a valid make.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="vehicleModel" class="form-label fw-semibold">Model *</label>
+                                    <input type="text" class="form-control" id="vehicleModel" placeholder="e.g., Camry" required>
+                                    <div class="invalid-feedback">Please provide a valid model.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="vehicleYear" class="form-label fw-semibold">Year *</label>
+                                    <input type="number" class="form-control" id="vehicleYear" min="1900" max="2030" placeholder="2024" required>
+                                    <div class="invalid-feedback">Please provide a valid year.</div>
+                                </div>
                             </div>
                         </div>
+                        <div class="section-header mb-3">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-id-card me-2"></i>Registration & Identification</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="vehicleLicense" class="form-label fw-semibold">License Plate *</label>
+                                    <input type="text" class="form-control" id="vehicleLicense" placeholder="ABC-123" required>
+                                    <div class="invalid-feedback">Please provide a valid license plate.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="vehicleVin" class="form-label fw-semibold">VIN Number *</label>
+                                    <input type="text" class="form-control" id="vehicleVin" placeholder="17-character VIN" maxlength="17" required>
+                                    <div class="invalid-feedback">Please provide a valid VIN number.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-header mb-3">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-cogs me-2"></i>Vehicle Specifications</h6>
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="vehicleType" class="form-label fw-semibold">Type *</label>
+                                    <select class="form-select" id="vehicleType" required>
+                                        <option value="">Choose type</option>
+                                        <option value="sedan">Sedan</option>
+                                        <option value="suv">SUV</option>
+                                        <option value="van">Van</option>
+                                        <option value="bus">Bus</option>
+                                        <option value="luxury">Luxury</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a vehicle type.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="vehicleCapacity" class="form-label fw-semibold">Capacity *</label>
+                                    <input type="number" class="form-control" id="vehicleCapacity" min="1" max="50" placeholder="4" required>
+                                    <div class="invalid-feedback">Please provide passenger capacity.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="vehicleColor" class="form-label fw-semibold">Color *</label>
+                                    <input type="text" class="form-control" id="vehicleColor" placeholder="White" required>
+                                    <div class="invalid-feedback">Please provide vehicle color.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="vehicleFuelType" class="form-label fw-semibold">Fuel Type *</label>
+                                    <select class="form-select" id="vehicleFuelType" required>
+                                        <option value="">Choose fuel</option>
+                                        <option value="gasoline">Gasoline</option>
+                                        <option value="diesel">Diesel</option>
+                                        <option value="hybrid">Hybrid</option>
+                                        <option value="electric">Electric</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select fuel type.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-header mb-3">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-wrench me-2"></i>Status & Maintenance</h6>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="vehicleStatus" class="form-label fw-semibold">Status *</label>
+                                    <select class="form-select" id="vehicleStatus" required>
+                                        <option value="">Choose status</option>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                        <option value="maintenance">Maintenance</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select vehicle status.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="vehicleMileage" class="form-label fw-semibold">Current Mileage</label>
+                                    <input type="number" class="form-control" id="vehicleMileage" min="0" placeholder="25000">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="vehicleInsurance" class="form-label fw-semibold">Insurance Expiry</label>
+                                    <input type="date" class="form-control" id="vehicleInsurance">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-header mb-3">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-camera me-2"></i>Vehicle Photos</h6>
+                            <div class="border border-2 border-primary rounded p-4 text-center bg-light">
+                                <i class="fas fa-cloud-upload-alt fa-2x text-primary mb-2"></i>
+                                <p class="mb-2">Drag and drop files here or click to browse</p>
+                                <input type="file" class="form-control d-none" id="vehiclePhotos" multiple accept="image/*">
+                                <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('vehiclePhotos').click()"><i class="fas fa-plus me-2"></i>Choose Files</button>
+                            </div>
+                            <div id="photoPreview" class="row g-2 mt-3"></div>
+                        </div>
+                        <div class="section-header">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-sticky-note me-2"></i>Additional Notes</h6>
+                            <textarea class="form-control" id="vehicleNotes" rows="4" placeholder="Enter any additional notes about the vehicle..."></textarea>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+                    <div class="modal-footer bg-light p-3">
+                        <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save me-2"></i>Add Vehicle</button>
                     </div>
                 </form>
             </div>
@@ -518,111 +551,139 @@
 
     <!-- Edit Vehicle Modal -->
     <div class="modal fade" id="editVehicleModal" tabindex="-1" aria-labelledby="editVehicleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editVehicleModalLabel">Edit Vehicle</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content shadow-lg border-0 compact-edit-modal compact-modal">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="editVehicleModalLabel"><i class="fas fa-edit me-2"></i>Edit Vehicle</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="editVehicleForm">
-                    <div class="modal-body">
-                        <div class="row g-2">
-                            <div class="col-md-6">
-                                <label for="editVehicleMake" class="form-label">Make</label>
-                                <input type="text" class="form-control" id="editVehicleMake" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleModel" class="form-label">Model</label>
-                                <input type="text" class="form-control" id="editVehicleModel" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleYear" class="form-label">Year</label>
-                                <input type="number" class="form-control" id="editVehicleYear" min="1900" max="2030" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleLicense" class="form-label">License Plate</label>
-                                <input type="text" class="form-control" id="editVehicleLicense" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleVin" class="form-label">VIN Number</label>
-                                <input type="text" class="form-control" id="editVehicleVin" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleType" class="form-label">Vehicle Type</label>
-                                <select class="form-select" id="editVehicleType" required>
-                                    <option value="">Select Type</option>
-                                    <option value="sedan">Sedan</option>
-                                    <option value="suv">SUV</option>
-                                    <option value="van">Van</option>
-                                    <option value="bus">Bus</option>
-                                    <option value="luxury">Luxury</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleCapacity" class="form-label">Passenger Capacity</label>
-                                <input type="number" class="form-control" id="editVehicleCapacity" min="1" max="50" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleColor" class="form-label">Color</label>
-                                <input type="text" class="form-control" id="editVehicleColor" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleFuelType" class="form-label">Fuel Type</label>
-                                <select class="form-select" id="editVehicleFuelType" required>
-                                    <option value="">Select Fuel Type</option>
-                                    <option value="gasoline">Gasoline</option>
-                                    <option value="diesel">Diesel</option>
-                                    <option value="hybrid">Hybrid</option>
-                                    <option value="electric">Electric</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleStatus" class="form-label">Status</label>
-                                <select class="form-select" id="editVehicleStatus" required>
-                                    <option value="active">Active</option>
-                                    <option value="maintenance">Maintenance</option>
-                                    <option value="inactive">Inactive</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleMileage" class="form-label">Current Mileage</label>
-                                <input type="number" class="form-control" id="editVehicleMileage" min="0">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="editVehicleInsurance" class="form-label">Insurance Expiry</label>
-                                <input type="date" class="form-control" id="editVehicleInsurance">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Current Photos</label>
-                                <div id="currentPhotos" class="d-flex flex-wrap gap-2 mb-3">
-                                    <!-- Sample current photos -->
-                                    <div class="position-relative photo-item">
-                                        <img src="https://via.placeholder.com/100x80?text=Car+Front" class="img-thumbnail" style="width: 100px; height: 80px; object-fit: cover;">
-                                        <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 rounded-circle p-1" onclick="removePhoto(this)" style="width: 25px; height: 25px; font-size: 12px;">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                    <div class="position-relative photo-item">
-                                        <img src="https://via.placeholder.com/100x80?text=Car+Side" class="img-thumbnail" style="width: 100px; height: 80px; object-fit: cover;">
-                                        <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 rounded-circle p-1" onclick="removePhoto(this)" style="width: 25px; height: 25px; font-size: 12px;">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
+                <form id="editVehicleForm" class="needs-validation" novalidate>
+                    <div class="modal-body p-3">
+                        <div class="section-header mb-2">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-car me-2"></i>Vehicle Information</h6>
+                            <div class="row g-2">
+                                <div class="col-md-4">
+                                    <label for="editVehicleMake" class="form-label fw-semibold">Make *</label>
+                                    <input type="text" class="form-control" id="editVehicleMake" required>
+                                    <div class="invalid-feedback">Please provide a valid make.</div>
                                 </div>
-                                <label for="editVehiclePhotos" class="form-label">Add New Photos</label>
-                                <input type="file" class="form-control" id="editVehiclePhotos" multiple accept="image/*">
-                                <small class="text-muted">You can select multiple photos (JPG, PNG, GIF)</small>
-                                <div id="editPhotoPreview" class="mt-3 d-flex flex-wrap gap-2"></div>
-                            </div>
-                            <div class="col-12">
-                                <label for="editVehicleNotes" class="form-label">Notes</label>
-                                <textarea class="form-control" id="editVehicleNotes" rows="3"></textarea>
+                                <div class="col-md-4">
+                                    <label for="editVehicleModel" class="form-label fw-semibold">Model *</label>
+                                    <input type="text" class="form-control" id="editVehicleModel" required>
+                                    <div class="invalid-feedback">Please provide a valid model.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="editVehicleYear" class="form-label fw-semibold">Year *</label>
+                                    <input type="number" class="form-control" id="editVehicleYear" min="1900" max="2030" required>
+                                    <div class="invalid-feedback">Please provide a valid year.</div>
+                                </div>
                             </div>
                         </div>
+                        <div class="section-header mb-2">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-id-card me-2"></i>Registration & Identification</h6>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <label for="editVehicleLicense" class="form-label fw-semibold">License Plate *</label>
+                                    <input type="text" class="form-control" id="editVehicleLicense" required>
+                                    <div class="invalid-feedback">Please provide a valid license plate.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editVehicleVin" class="form-label fw-semibold">VIN Number *</label>
+                                    <input type="text" class="form-control" id="editVehicleVin" maxlength="17" required>
+                                    <div class="invalid-feedback">Please provide a valid VIN number.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-header mb-2">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-cogs me-2"></i>Vehicle Specifications</h6>
+                            <div class="row g-2">
+                                <div class="col-md-3">
+                                    <label for="editVehicleType" class="form-label fw-semibold">Type *</label>
+                                    <select class="form-select" id="editVehicleType" required>
+                                        <option value="">Select Type</option>
+                                        <option value="sedan">Sedan</option>
+                                        <option value="suv">SUV</option>
+                                        <option value="van">Van</option>
+                                        <option value="bus">Bus</option>
+                                        <option value="luxury">Luxury</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a vehicle type.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="editVehicleCapacity" class="form-label fw-semibold">Capacity *</label>
+                                    <input type="number" class="form-control" id="editVehicleCapacity" min="1" max="50" required>
+                                    <div class="invalid-feedback">Please provide passenger capacity.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="editVehicleColor" class="form-label fw-semibold">Color *</label>
+                                    <input type="text" class="form-control" id="editVehicleColor" required>
+                                    <div class="invalid-feedback">Please provide vehicle color.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="editVehicleFuelType" class="form-label fw-semibold">Fuel Type *</label>
+                                    <select class="form-select" id="editVehicleFuelType" required>
+                                        <option value="">Select Fuel Type</option>
+                                        <option value="gasoline">Gasoline</option>
+                                        <option value="diesel">Diesel</option>
+                                        <option value="hybrid">Hybrid</option>
+                                        <option value="electric">Electric</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select fuel type.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-header mb-2">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-wrench me-2"></i>Status & Maintenance</h6>
+                            <div class="row g-2">
+                                <div class="col-md-4">
+                                    <label for="editVehicleStatus" class="form-label fw-semibold">Status *</label>
+                                    <select class="form-select" id="editVehicleStatus" required>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                        <option value="maintenance">Maintenance</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select vehicle status.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="editVehicleMileage" class="form-label fw-semibold">Current Mileage</label>
+                                    <input type="number" class="form-control" id="editVehicleMileage" min="0">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="editVehicleInsurance" class="form-label fw-semibold">Insurance Expiry</label>
+                                    <input type="date" class="form-control" id="editVehicleInsurance">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-header mb-3">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-camera me-2"></i>Vehicle Photos</h6>
+                            <label class="form-label">Current Photos</label>
+                            <div id="currentPhotos" class="d-flex flex-wrap gap-2 mb-2">
+                                <div class="position-relative photo-item">
+                                    <img src="{{ asset('img/Silver Sedan.png') }}" class="img-thumbnail" style="width: 100px; height: 80px; object-fit: cover;">
+                                    <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 rounded-circle p-1" onclick="removePhoto(this)" style="width: 25px; height: 25px; font-size: 12px;"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="position-relative photo-item">
+                                    <img src="{{ asset('img/suv.png') }}" class="img-thumbnail" style="width: 100px; height: 80px; object-fit: cover;">
+                                    <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 rounded-circle p-1" onclick="removePhoto(this)" style="width: 25px; height: 25px; font-size: 12px;"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <label for="editVehiclePhotos" class="form-label">Add New Photos</label>
+                            <div class="border border-2 border-primary rounded p-4 text-center bg-light">
+                                <i class="fas fa-cloud-upload-alt fa-2x text-primary mb-2"></i>
+                                <p class="mb-2">Drag and drop files here or click to browse</p>
+                                <input type="file" class="form-control d-none" id="editVehiclePhotos" multiple accept="image/*">
+                                <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('editVehiclePhotos').click()"><i class="fas fa-plus me-2"></i>Choose Files</button>
+                            </div>
+                            <div id="editPhotoPreview" class="row g-2 mt-3"></div>
+                        </div>
+                        <div class="section-header mb-1">
+                            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-sticky-note me-2"></i>Notes</h6>
+                            <textarea class="form-control" id="editVehicleNotes" rows="4"></textarea>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Vehicle</button>
+                    <div class="modal-footer bg-light p-2">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Cancel</button>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save me-2"></i>Update Vehicle</button>
                     </div>
                 </form>
             </div>
@@ -631,8 +692,8 @@
 
     <!-- View Vehicle Modal -->
     <div class="modal fade" id="viewVehicleModal" tabindex="-1" aria-labelledby="viewVehicleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
+        <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content compact-modal view-vehicle-modal">
                 <div class="modal-header">
                     <h5 class="modal-title" id="viewVehicleModalLabel">Vehicle Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -645,13 +706,13 @@
                             <div id="vehiclePhotosCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner rounded">
                                     <div class="carousel-item active">
-                                        <img src="https://via.placeholder.com/600x300?text=Car+Front+View" class="d-block w-100" style="height: 220px; object-fit: cover;" alt="Vehicle Front">
+                                        <img src="{{ asset('img/Silver Sedan.png') }}" class="d-block w-100" style="height: 220px; object-fit: cover;" alt="Vehicle Front">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="https://via.placeholder.com/600x300?text=Car+Side+View" class="d-block w-100" style="height: 220px; object-fit: cover;" alt="Vehicle Side">
+                                        <img src="{{ asset('img/mini van.png') }}" class="d-block w-100" style="height: 220px; object-fit: cover;" alt="Vehicle Side">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="https://via.placeholder.com/600x300?text=Car+Interior" class="d-block w-100" style="height: 220px; object-fit: cover;" alt="Vehicle Interior">
+                                        <img src="{{ asset('img/luxary car.png') }}" class="d-block w-100" style="height: 220px; object-fit: cover;" alt="Vehicle Interior">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#vehiclePhotosCarousel" data-bs-slide="prev">
@@ -671,9 +732,9 @@
 
                             <!-- Thumbnail Gallery -->
                             <div class="d-flex gap-2 mb-4 flex-wrap">
-                                <img src="https://via.placeholder.com/80x60?text=1" class="img-thumbnail photo-thumbnail" style="width: 80px; height: 60px; object-fit: cover; cursor: pointer;" onclick="changeCarouselSlide(0)" alt="Photo 1">
-                                <img src="https://via.placeholder.com/80x60?text=2" class="img-thumbnail photo-thumbnail" style="width: 80px; height: 60px; object-fit: cover; cursor: pointer;" onclick="changeCarouselSlide(1)" alt="Photo 2">
-                                <img src="https://via.placeholder.com/80x60?text=3" class="img-thumbnail photo-thumbnail" style="width: 80px; height: 60px; object-fit: cover; cursor: pointer;" onclick="changeCarouselSlide(2)" alt="Photo 3">
+                                <img src="{{ asset('img/Silver Sedan.png') }}" class="img-thumbnail photo-thumbnail" style="width: 80px; height: 60px; object-fit: cover; cursor: pointer;" onclick="changeCarouselSlide(0)" alt="Photo 1">
+                                <img src="{{ asset('img/mini van.png') }}" class="img-thumbnail photo-thumbnail" style="width: 80px; height: 60px; object-fit: cover; cursor: pointer;" onclick="changeCarouselSlide(1)" alt="Photo 2">
+                                <img src="{{ asset('img/luxary car.png') }}" class="img-thumbnail photo-thumbnail" style="width: 80px; height: 60px; object-fit: cover; cursor: pointer;" onclick="changeCarouselSlide(2)" alt="Photo 3">
                             </div>
                         </div>
 
@@ -704,8 +765,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <h6 class="text-muted mb-1">Status & Details</h6>
-                                            <div class="mb-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <h6 class="text-muted mb-0">Status & Details</h6>
                                                 <span class="badge bg-success" id="viewVehicleStatus">Active</span>
                                             </div>
                                             <div class="row g-2">
@@ -741,9 +802,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#editVehicleModal">
-                        <i class="fas fa-edit me-1"></i>Edit Vehicle
-                    </button>
                 </div>
             </div>
         </div>
@@ -753,4 +811,5 @@
 
 @section('scripts')
 <script src="{{ asset('js/fvm-vehicles.js') }}"></script>
+<script src="{{ asset('js/fvm-table-pagination.js') }}"></script>
 @endsection

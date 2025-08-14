@@ -458,6 +458,44 @@
     .photo-preview-item img,
     .photo-item img {
         width: 80px !important;
+
+/* Compact styling specifically for the Edit Vehicle modal */
+.compact-edit-modal .modal-header { padding: 0.5rem 0.75rem; }
+.compact-edit-modal .modal-body { padding: 0.75rem !important; }
+.compact-edit-modal .modal-footer { padding: 0.5rem 0.75rem !important; }
+.compact-edit-modal .form-label { margin-bottom: 0.15rem; font-weight: 600; }
+.compact-edit-modal .form-control, .compact-edit-modal .form-select { padding: 0.35rem 0.5rem; font-size: 0.9rem; }
+.compact-edit-modal .row > [class^="col-"] { margin-bottom: 0.25rem; }
+/* Make it feel lighter */
+.compact-edit-modal .modal-content { border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
         height: 60px !important;
     }
 }
+
+
+/* View Vehicle modal text alignment for clean layout */
+.view-vehicle-modal .card-body .row > [class^="col-"] small { display: block; margin-bottom: 2px; color: #6c757d; }
+.view-vehicle-modal .card-body .row > [class^="col-"] .fw-bold { line-height: 1.1; }
+.view-vehicle-modal #viewVehicleName { margin-bottom: .5rem; }
+.view-vehicle-modal .badge { font-size: .85rem; }
+.view-vehicle-modal .border.rounded { line-height: 1.4; }
+/* Align values vertically centered in their cells on narrow widths */
+@media (max-width: 576px) {
+  .view-vehicle-modal .card-body .row > [class^="col-"] { display: flex; flex-direction: column; }
+}
+
+
+/* Two-column label/value rows for perfect alignment */
+.view-vehicle-modal .spec-item { display:flex; align-items:baseline; gap:.5rem; margin-bottom:.25rem; }
+.view-vehicle-modal .spec-item small { width: 120px; min-width: 120px; text-align: left; margin:0; }
+.view-vehicle-modal .spec-item .fw-bold { flex:1; margin:0; }
+@media (max-width: 576px) {
+  .view-vehicle-modal .spec-item { flex-direction: column; align-items: flex-start; }
+  .view-vehicle-modal .spec-item small { width:auto; min-width: 0; }
+}
+
+
+/* Revert to simple stacked labels/values in view modal */
+.view-vehicle-modal .card-body small { display:block; margin-bottom:2px; }
+.view-vehicle-modal .card-body .fw-bold { display:block; }

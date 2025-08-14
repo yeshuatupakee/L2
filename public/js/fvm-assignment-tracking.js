@@ -13,8 +13,15 @@ let map;
 let markers = [];
 let isMapVisible = false;
 
+// Table sorting states for both tables
+let sortStates = {
+  assignmentsTable: { column: null, direction: 'asc' },
+  completedAssignmentsTable: { column: null, direction: 'asc' }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   loadAssignments();
+  loadCompletedAssignments();
   updateStats();
   initializeEventListeners();
 });
@@ -27,6 +34,7 @@ function initializeEventListeners() {
   if (refreshBtn) {
     refreshBtn.addEventListener('click', function() {
       loadAssignments();
+      loadCompletedAssignments();
       updateStats();
       if (isMapVisible) updateMapMarkers();
     });
@@ -34,13 +42,48 @@ function initializeEventListeners() {
 
   const statusFilter = document.getElementById('statusFilter');
   if (statusFilter) statusFilter.addEventListener('change', function() { filterAssignments(this.value); });
+
+  // Enable header click sorting for both tables
+  ['assignmentsTable', 'completedAssignmentsTable'].forEach(tableId => {
+    const table = document.getElementById(tableId);
+    if (!table) return;
+    const headers = table.querySelectorAll('thead th');
+    headers.forEach((th, index) => {
+      th.style.cursor = 'pointer';
+      th.addEventListener('click', () => { setSort(tableId, index); });
+    });
+  });
 }
 
 function loadAssignments() {
   const tbody = document.getElementById('assignmentsTableBody');
   if (!tbody) return;
   tbody.innerHTML = '';
-  mockAssignments.forEach(assignment => tbody.appendChild(createAssignmentRow(assignment)));
+  // Only non-completed in current table
+  let data = mockAssignments.filter(a => a.status !== 'completed');
+  // Sort data before rendering
+  const st = sortStates.assignmentsTable;
+  if (st.column !== null) {
+    const cmp = getComparator(st.column);
+    data.sort(cmp);
+    if (st.direction === 'desc') data.reverse();
+  }
+  data.forEach(assignment => tbody.appendChild(createAssignmentRow(assignment)));
+}
+
+function loadCompletedAssignments() {
+  const tbody = document.getElementById('completedAssignmentsTableBody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  // Only completed in completed table
+  let data = mockAssignments.filter(a => a.status === 'completed');
+  const st = sortStates.completedAssignmentsTable;
+  if (st.column !== null) {
+    const cmp = getComparator(st.column);
+    data.sort(cmp);
+    if (st.direction === 'desc') data.reverse();
+  }
+  data.forEach(assignment => tbody.appendChild(createAssignmentRow(assignment)));
 }
 
 function createAssignmentRow(assignment) {
@@ -54,7 +97,7 @@ function createAssignmentRow(assignment) {
     <td><div class="vehicle-info"><h6 class="mb-0">${assignment.vehicleInfo}</h6><span class="badge bg-light text-dark">${assignment.licensePlate}</span></div></td>
     <td><div class="location-full"><strong>Pickup:</strong><br>${assignment.pickupAddress}<br><strong class="mt-2 d-block">Destination:</strong><br>${assignment.destinationAddress}</div></td>
     <td><div class="time-details"><strong>Scheduled:</strong><br>${formatDateTime(assignment.scheduledTime)}<br><strong class="mt-2 d-block">ETA:</strong><br>${formatDateTime(assignment.estimatedArrival)}<br><small class="text-success"><strong>Fare: $${assignment.fare}</strong></small></div></td>
-    <td><span class="badge ${statusClass}">${statusText}</span></td>
+    <td><span class="badge status-badge ${statusClass}">${statusText}</span></td>
     <td>
       <div class="btn-group" role="group">
         ${assignment.currentLat && assignment.currentLng ? `<button type="button" class="btn btn-sm btn-outline-success" onclick="trackVehicle(${assignment.id})" title="Track Vehicle"><i class="fas fa-map-marker-alt"></i></button>` : ''}
@@ -62,6 +105,45 @@ function createAssignmentRow(assignment) {
       </div>
     </td>`;
   return row;
+}
+
+// Set sort column/direction and rerender
+function setSort(tableId, index) {
+  const state = sortStates[tableId];
+  if (!state) return;
+  if (state.column === index) {
+    state.direction = state.direction === 'asc' ? 'desc' : 'asc';
+  } else {
+    state.column = index;
+    state.direction = 'asc';
+  }
+  if (tableId === 'assignmentsTable') {
+    loadAssignments();
+    const statusFilter = document.getElementById('statusFilter');
+    if (statusFilter) filterAssignments(statusFilter.value);
+  } else if (tableId === 'completedAssignmentsTable') {
+    loadCompletedAssignments();
+  }
+}
+
+// Get comparator for column index
+function getComparator(index) {
+  const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+  return (a, b) => {
+    let va, vb;
+    switch (index) {
+      case 0: va = a.tripId; vb = b.tripId; break;
+      case 1: va = a.customerName; vb = b.customerName; break;
+      case 2: va = a.driverName; vb = b.driverName; break;
+      case 3: va = a.vehicleInfo; vb = b.vehicleInfo; break;
+      case 4: va = a.pickupAddress; vb = b.pickupAddress; break;
+      case 5: // Schedule & Fare -> sort by scheduledTime
+        return new Date(a.scheduledTime) - new Date(b.scheduledTime);
+      case 6: va = a.status; vb = b.status; break;
+      default: va = a.tripId; vb = b.tripId; break;
+    }
+    return collator.compare(String(va ?? ''), String(vb ?? ''));
+  };
 }
 
 function getStatusClass(status) {

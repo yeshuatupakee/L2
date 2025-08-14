@@ -85,8 +85,7 @@
             <div class="collapse {{ request()->is('vrds/*') ? 'show' : '' }}" id="reservationSub">
                 <ul class="nav flex-column ms-4">
                     <li><a class="nav-link {{ request()->routeIs('vrds.reservation') ? 'active' : '' }}" href="{{ route('vrds.reservation') }}">Reservation</a></li>
-                    <li><a class="nav-link {{ request()->routeIs('vrds.trip-scheduling') ? 'active' : '' }}" href="{{ route('vrds.trip-scheduling') }}">Trip Scheduling</a></li>
-                    <li><a class="nav-link {{ request()->routeIs('vrds.dispatch-monitoring') ? 'active' : '' }}" href="{{ route('vrds.dispatch-monitoring') }}">Dispatch Monitoring</a></li>
+                    <li><a class="nav-link {{ request()->routeIs('vrds.dispatch-scheduling') ? 'active' : '' }}" href="{{ route('vrds.dispatch-scheduling') }}">Dispatch Scheduling</a></li>
                 </ul>
             </div>
         </li>

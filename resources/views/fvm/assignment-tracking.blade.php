@@ -27,12 +27,12 @@
     <div class="row mb-4">
         <div class="col-md-3 mb-3">
             <div class="card stats-card bg-primary text-white">
-                <div class="card-body">
+                <div class="card-body" style="padding: 0.75rem;">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6>Active Assignments</h6>
-                            <h3 id="activeCount">0</h3>
-                            <div class="card-detail">
+                            <h6 style="font-size: 0.9rem;">Active Assignments</h6>
+                            <h3 style="font-size: 1.5rem;" id="activeCount">0</h3>
+                            <div class="card-detail" style="font-size: 0.8rem;">
                                 <i class="fas fa-clock"></i> Currently running
                             </div>
                         </div>
@@ -45,12 +45,12 @@
         </div>
         <div class="col-md-3 mb-3">
             <div class="card stats-card bg-success text-white">
-                <div class="card-body">
+                <div class="card-body" style="padding: 0.75rem;">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6>In Progress</h6>
-                            <h3 id="inProgressCount">0</h3>
-                            <div class="card-detail">
+                            <h6 style="font-size: 0.9rem;">In Progress</h6>
+                            <h3 style="font-size: 1.5rem;" id="inProgressCount">0</h3>
+                            <div class="card-detail" style="font-size: 0.8rem;">
                                 <i class="fas fa-route"></i> En route to destination
                             </div>
                         </div>
@@ -63,12 +63,12 @@
         </div>
         <div class="col-md-3 mb-3">
             <div class="card stats-card bg-warning text-white">
-                <div class="card-body">
+                <div class="card-body" style="padding: 0.75rem;">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6>Pending</h6>
-                            <h3 id="pendingCount">0</h3>
-                            <div class="card-detail">
+                            <h6 style="font-size: 0.9rem;">Pending</h6>
+                            <h3 style="font-size: 1.5rem;" id="pendingCount">0</h3>
+                            <div class="card-detail" style="font-size: 0.8rem;">
                                 <i class="fas fa-hourglass-half"></i> Awaiting assignment
                             </div>
                         </div>
@@ -81,12 +81,12 @@
         </div>
         <div class="col-md-3 mb-3">
             <div class="card stats-card bg-info text-white">
-                <div class="card-body">
+                <div class="card-body" style="padding: 0.75rem;">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6>Completed Today</h6>
-                            <h3 id="completedCount">0</h3>
-                            <div class="card-detail">
+                            <h6 style="font-size: 0.9rem;">Completed Today</h6>
+                            <h3 style="font-size: 1.5rem;" id="completedCount">0</h3>
+                            <div class="card-detail" style="font-size: 0.8rem;">
                                 <i class="fas fa-calendar-day"></i> Since midnight
                             </div>
                         </div>
@@ -137,7 +137,7 @@
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
-                <table class="table table-clean mb-0" id="assignmentsTable">
+                <table class="table table-clean mb-0 paginate-10" id="assignmentsTable">
                     <thead>
                         <tr>
                             <th>Trip Details</th>
@@ -158,12 +158,46 @@
         </div>
     </div>
 
+    <!-- Completed Assignments Table -->
+    <div class="card main-card mt-4">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title">
+                    <i class="fas fa-check-double me-2 text-success"></i>
+                    Completed Assignments
+                </h5>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-clean mb-0 paginate-10" id="completedAssignmentsTable">
+                    <thead>
+                        <tr>
+                            <th>Trip Details</th>
+                            <th>Customer</th>
+                            <th>Driver</th>
+                            <th>Vehicle</th>
+                            <th>Route Information</th>
+                            <th>Schedule & Fare</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="completedAssignmentsTableBody">
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Include Leaflet CSS and JS for the map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="{{ asset('js/fvm-assignment-tracking.js') }}"></script>
+    <script src="{{ asset('js/fvm-table-pagination.js') }}"></script>
 
     <script type="text/plain" data-moved-to="public/js/fvm-assignment-tracking.js">
         // Mock data for assignments

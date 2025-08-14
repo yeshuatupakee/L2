@@ -17,8 +17,7 @@ Route::prefix('fvm')->name('fvm.')->group(function () {
 // Vehicle Reservation and Dispatch System (VRDS)
 Route::prefix('vrds')->name('vrds.')->group(function () {
     Route::view('/reservation', 'vrds.reservation')->name('reservation');
-    Route::view('/trip-scheduling', 'vrds.trip-scheduling')->name('trip-scheduling');
-    Route::view('/dispatch-monitoring', 'vrds.dispatch-monitoring')->name('dispatch-monitoring');
+    Route::view('/dispatch-scheduling', 'vrds.dispatch-scheduling')->name('dispatch-scheduling');
 });
 
 // Driver and Trip Performance Monitoring (DTPM)

@@ -290,4 +290,5 @@
 
 @section('scripts')
 <script src="{{ asset('js/fvm-maintenance.js') }}"></script>
+<script src="{{ asset('js/fvm-table-pagination.js') }}"></script>
 @endsection
